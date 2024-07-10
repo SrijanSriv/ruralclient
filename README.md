@@ -12,4 +12,4 @@ npm i # install dependency
 npm run dev # start app in dev mode
 ```
 
-The server-url has been hardcoded for ease of using
+The server-url has been hardcoded for ease of use
