@@ -86,7 +86,7 @@ export default function Reservation({ params }: { params: { id: string } }) {
         setReservations([...reservations,
             { reservation_date: slot.date, timeslot_start: slot.start, timeslot_end: slot.end,
                 provider, provider_id: provider.provider_id, facility_id: parseInt(params.id),
-                total_cost: facilityCost, facility_type: facilityType, payment_done: false, created_at: new Date()}])
+                total_cost: facilityCost, facility_type: facilityType, payment_done: true, created_at: new Date()}])
         setChosenSlots(chosenSlots.map(s => {
             if (s.start === slot.start && s.date === slot.date) {
                 return { ...s, providers: s.providers.filter(p => p.provider_id !== provider.provider_id) }
@@ -119,11 +119,6 @@ export default function Reservation({ params }: { params: { id: string } }) {
     }
 
     const handleMakingReservations = async (reservations: reservationType[]) => {
-        // const reservationObjectArray = reservations.map(({ provider, facility_type, ...reservationData }: reservationType) => {
-        //     return reservationData
-        // })
-        // console.log(`${serverUrl}reservation/`)
-        // const data = await axios.post(`${serverUrl}reservation`, reservationObjectArray)
         const ruralCompanyCartItems = {
             items: reservations,
             exipry: new Date(Date.now() + 10 * 60 * 1000)
