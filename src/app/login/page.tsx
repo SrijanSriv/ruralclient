@@ -6,7 +6,7 @@ export default function Login() {
         <>
             <Navbar />
             <div className="flex justify-center items-center h-[calc(100vh-64px)]">
-                <LoginSection />
+                <LoginSection destination="reservation" />
             </div>
         </>
     )

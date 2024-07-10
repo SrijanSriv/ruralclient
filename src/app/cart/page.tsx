@@ -67,7 +67,7 @@ export default function Cart() {
                             Welcome, back!
                         </div> :
                         <div>
-                            <LoginSection />
+                            <LoginSection destination="cart" />
                         </div>}
                 </div>
                 <div className="w-[50vw] h-[calc(100vh-64px)] flex justify-center items-center">

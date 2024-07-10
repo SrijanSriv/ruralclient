@@ -54,7 +54,7 @@ export default function MyReservation() {
                     </div>
                 </div> : <div>
                     Please login to view your reservations
-                    <LoginSection />
+                    <LoginSection destination="myreservation" />
                 </div>}
             </div>
         </div>

@@ -4,7 +4,11 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { Navbar } from './Navbar';
 
-export default function LoginSection() {
+interface LoginProps {
+    destination: string
+}
+
+export default function LoginSection(props: LoginProps) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,7 +25,7 @@ export default function LoginSection() {
 
             if (response.data && response.data.access_token) {
                 localStorage.setItem('ruralcompany', response.data.access_token);
-                router.push('/'); // Redirect to home or another page after login
+                router.push(`/${props.destination}`); // Redirect to home or another page after login
             } else {
                 setError('Invalid login credentials.');
             }
